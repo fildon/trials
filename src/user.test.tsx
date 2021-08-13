@@ -7,14 +7,12 @@ import { getUserDetails } from "./user-api";
 
 jest.mock("./user-api");
 
-describe("User component", () => {
-  const mockGetUserDetails = getUserDetails as jest.MockedFunction<
-    typeof getUserDetails
-  >;
-  mockGetUserDetails.mockReturnValue({ name: "rupert" });
+const mockGetUserDetails = getUserDetails as jest.MockedFunction<
+  typeof getUserDetails
+>;
+mockGetUserDetails.mockReturnValue({ name: "rupert" });
 
-  it("displays the user's name", () => {
-    render(<User userId="1234" />);
-    expect(screen.getByText("rupert")).toBeInTheDocument();
-  });
+test("User component displays the user's name", () => {
+  render(<User userId="1234" />);
+  expect(screen.getByText("rupert")).toBeInTheDocument();
 });

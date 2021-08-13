@@ -2,8 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "jsx": "react",
-    "noImplicitAny": true,
     "strict": true
   },
-  "includes": ["src", "./jest-setup.ts"]
+  "include": ["src", "./jest-setup.ts"]
 }
