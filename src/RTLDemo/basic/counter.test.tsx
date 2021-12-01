@@ -8,9 +8,9 @@ import { Counter } from "./counter";
 it("displays initial count and increments when clicked", () => {
   render(<Counter />);
 
-  expect(screen.getByText("0")).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "0" })).toBeInTheDocument();
 
   userEvent.click(screen.getByText("0"));
 
-  expect(screen.getByText("1")).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "1" })).toBeInTheDocument();
 });
